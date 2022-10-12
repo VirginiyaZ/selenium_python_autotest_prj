@@ -1,4 +1,5 @@
 from .base_page import BasePage
+from .locators import BasePageLocators
 from .locators import ProductPageLocators
 
 
@@ -28,4 +29,6 @@ class ProductPage(BasePage):
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.PRODUCT_NAME_AFT_ADDED),  "Success message! But should not to be"
-           
+
+
+  
