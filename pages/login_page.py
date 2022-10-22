@@ -8,6 +8,19 @@ class LoginPage(BasePage):
         self.should_be_login_form()
         self.should_be_register_form()
 
+
+    def register_new_user(self,email, password):
+        email_registration = self.browser.find_element(*LoginPageLocators.EMAIL_REGISTRATION)
+        email_registration.send_keys(email)
+        password_number1 = self.browser.find_element(*LoginPageLocators.PASSWORD_NUMBER1)
+        password_number1.send_keys(password)
+        re_password_number1 = self.browser.find_element(*LoginPageLocators.RE_PASSWORD_NUMBER1)
+        re_password_number1.send_keys(password)
+        registration_button = self.browser.find_element(*LoginPageLocators.REGISTRATION_BUTTON)
+        registration_button.click()
+
+
+
     def should_be_login_url(self):
         # реализуйте проверку на корректный url адрес
         # assert True
